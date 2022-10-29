@@ -35,7 +35,7 @@ function getUserInfo() {
       }
 
       renderAvatar(res.data)
-    }
+    },
     // complete: function (res) {
     //   console.log(res)
     //   //回调函数 responseJSON
@@ -53,12 +53,13 @@ function getUserInfo() {
 //渲染头像
 function renderAvatar(user) {
   // 获取名称
-  var name = user.nikename || user.username
+  console.log(user)
+  var name = user.nickname || user.username
   $('#welcom').html('欢迎&nbsp;&nbsp;' + name)
   //按需要渲染用户头像
   if (user.user_pic !== null) {
     //渲染图片图像
-    $('.layui-nav-img').attr('src,user.user_pic').show()
+    $('.layui-nav-img').attr('src',user.user_pic).show()
     $('.text-avatar').hide()
   } else {
     $('.layui-nav-img').hide()
